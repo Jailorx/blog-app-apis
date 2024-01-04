@@ -4,13 +4,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.shubham.blog.entities.User;
 import com.shubham.blog.exceptions.ResourceNotFoundException;
 import com.shubham.blog.payloads.UserDto;
 import com.shubham.blog.repositories.UserRepository;
+import com.shubham.blog.services.UserService;
 
-public class UserService implements com.shubham.blog.services.UserService {
+@Service
+public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
