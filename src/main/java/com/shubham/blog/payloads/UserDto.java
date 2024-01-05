@@ -15,7 +15,7 @@ public class UserDto {
 	private int id;
 	
 	@NotEmpty
-	@Size(min=4,message="Username must be minimum of 4 characters")
+	@Size(min=4,message="Username must have minimum of 4 characters")
 	private String name;
 	
 	@Email(message="Email address is not valid")
