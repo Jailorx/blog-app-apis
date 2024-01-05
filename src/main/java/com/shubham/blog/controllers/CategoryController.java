@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.shubham.blog.payloads.CategoryDto;
 import com.shubham.blog.services.CategoryService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/categories")
 public class CategoryController {
@@ -25,14 +27,14 @@ public class CategoryController {
 	private CategoryService categoryService;
 	
 	@PostMapping("/")
-	public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto)
+	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto)
 	{
 		CategoryDto createCategory=this.categoryService.createCategory(categoryDto);
 		return new ResponseEntity<>(createCategory,HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto,@PathVariable Integer id)
+	public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto,@PathVariable Integer id)
 	{
 		CategoryDto updatedCategory=this.categoryService.updateCategory(categoryDto, id);
 		return new ResponseEntity<>(updatedCategory,HttpStatus.OK);
