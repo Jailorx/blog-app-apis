@@ -13,7 +13,7 @@ import com.shubham.blog.payloads.PostDto;
 import com.shubham.blog.services.PostService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class PostController {
 	
 	@Autowired

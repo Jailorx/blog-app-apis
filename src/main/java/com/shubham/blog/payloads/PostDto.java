@@ -2,10 +2,8 @@ package com.shubham.blog.payloads;
 
 import java.util.Date;
 
-import com.shubham.blog.entities.Category;
-import com.shubham.blog.entities.User;
-
-import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +12,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PostDto {
+	
+	@NotEmpty
 	private String title;
+	@Size(min=10)
 	private String content;
 	private String imgName;
 	private Date addedDate;
