@@ -1,9 +1,8 @@
 package com.shubham.blog.entities;
 
-
-
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +21,8 @@ public class Post {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String title;
+	
+	@Column(length=1000)
 	private String content;
 	private String imgName;
 	private Date addedDate;

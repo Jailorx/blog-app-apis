@@ -2,7 +2,6 @@ package com.shubham.blog.services;
 
 import java.util.List;
 
-import com.shubham.blog.entities.Post;
 import com.shubham.blog.payloads.PostDto;
 
 public interface PostService {
