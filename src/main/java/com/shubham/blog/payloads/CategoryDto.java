@@ -17,7 +17,7 @@ public class CategoryDto {
 	private String title;
 	
 	@NotEmpty(message="Description cannot be empty")
-	@Size(min=10 message="Description must have 10 characters")
+	@Size(min=10 ,message="Description must have 10 characters")
 	private String description;
 	
 }
