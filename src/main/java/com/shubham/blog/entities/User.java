@@ -9,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,5 +32,7 @@ public class User {
 	
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
 	private List<Post> posts=new ArrayList<>();
-
+	
+	@ManyToMany(mappedBy="user", cascade=CascadeType.ALL)
+	private List<Comment> comments=new ArrayList<>();
 }
