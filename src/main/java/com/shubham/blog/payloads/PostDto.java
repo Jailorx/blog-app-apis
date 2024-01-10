@@ -1,6 +1,10 @@
 package com.shubham.blog.payloads;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import com.shubham.blog.entities.Comment;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -21,5 +25,6 @@ public class PostDto {
 	private Date addedDate;
 	private UserDto user;
 	private CategoryDto category;
+	private List<CommentDto> comments=new ArrayList<>();
 	
 }
