@@ -33,6 +33,6 @@ public class User {
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
 	private List<Post> posts=new ArrayList<>();
 	
-	@ManyToMany(mappedBy="user", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
 	private List<Comment> comments=new ArrayList<>();
 }
